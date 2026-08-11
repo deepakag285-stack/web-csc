@@ -79,7 +79,7 @@
  </style>
   <script>
  
-     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwTKJ-TcD_U-d8aFoKPW60358g3jjP0mrsK_qc8Acfc_BgfDHLlKA5ao_f5mWiscy5E/exec"; 
+     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx7FcP7I0CvcG23T7hySDX3iVER5hGYMejQkf45CWaSsaR9IDWcWSEkcMpOfFvhkpMT/exec"; 
 
      const entryTime = new Date(); // Site khulne ka exact waqt
 
@@ -394,6 +394,60 @@ setInterval(() => changeSlide(1), 2000);
       }
 
     </style>  
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // GitHub Pages के पाथ की समस्या से बचने के लिए './sw.js' लिखा है
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker Successfully Registered!', reg))
+                    .catch(err => console.error('Service Worker Registration Failed:', err));
+            });
+        }
+    </script>
+     <script>
+    // 1. Service Worker Register karein
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+
+    // 2. Notification Permission lein
+    Notification.requestPermission();
+
+    // 3. Polling: Har 30 seconds mein data.json check karein
+ let lastKnownBody = ""; // Pehle body kuch nahi thi
+
+async function checkForUpdates() {
+  try {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    // Check karein kya nayi body purani body se alag hai?
+    if (data.body !== lastKnownBody) {
+      showNotif(data.title, data.body);
+      
+      // Ab nayi body ko save kar lo taake agli baar compare ho sake
+      lastKnownBody = data.body;
+    }
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+
+    function showNotif(title, body) {
+      if (Notification.permission === 'granted') {
+        navigator.serviceWorker.ready.then((reg) => {
+          reg.showNotification(title, { body: body, icon: 'favicon.ico' });
+        });
+      }
+    }
+
+    // Har 30 seconds mein check karein
+    setInterval(checkForUpdates, 30000);
+    
+    // Page load hote hi pehli baar check karein
+    checkForUpdates();
+ 
+  </script>
 
 
          </body>

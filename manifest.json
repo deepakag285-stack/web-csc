@@ -1,0 +1,22 @@
+{
+  "name": "aggarwal deepak web developer",
+  "short_name": "deepak aggarwal",
+  "description": "The personal website of Deepak Aggarwal, a web developer.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "green",
+  "theme_color": "#317EFB",
+  "icons": [
+    {
+      "src": "images/file_000000008b7881faa363fc04ecb8bf71.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/file_000000008b7881faa363fc04ecb8bf71.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
