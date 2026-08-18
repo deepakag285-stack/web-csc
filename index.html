@@ -117,6 +117,64 @@
 
     window.addEventListener("beforeunload", sendData);
 </script>
+ <!-- Floating Social Buttons -->
+<div class="social-footer-bar">
+    <a href="https://wa.me/8684899861" target="_blank" class="social-btn whatsapp" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+        <a href="https://whatsapp.com/channel/0029Vb90Q7bBlHplJIprsV3z" target="_blank" class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/deepakag261?igsh=d2ZwZ3BpbXh3bXdl&igsi=d2ZwZ3BpbXh3bXdl" target="_blank" class="social-btn instagram" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1EpfQfpzZb/" target="_blank" class="social-btn facebook" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+</div>
+
+<!-- FontAwesome Icons CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Social Footer Bar Styling */
+.social-footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: olivedrab;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+/* Individual Button Styling */
+.social-footer-bar .social-btn {
+    font-size: 24px;
+    color: yellow;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Hover Effect (General Zoom) */
+.social-footer-bar .social-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Custom Colors for Buttons */
+.social-footer-bar .whatsapp { color: #007bff; } /* Yeh WhatsApp ka color blue kar dega */
+.social-footer-bar .whatsapp:hover { color: #0056b3; } /* Hover par dark blue */
+
+.social-footer-bar .channel:hover { color: #128C7E; }
+.social-footer-bar .instagram:hover { color: #E4405F; }
+.social-footer-bar .facebook:hover { color: #1877F2; }
+</style>
+
+
       <!-- Popup Modal -->
 <div id="surveyPopup" class="popup-overlay">
   <div class="popup-box">
@@ -149,16 +207,13 @@
     object-fit:cover;
 }
 </style>
-    <h2>DEEPAK AGGARWAL</h2>
 
+    <h2>DEEPAK AGGARWAL</h2>
+<h5 class="laptop9">यह साइट उन सभी उम्मीदवारों के लिए मददगार है जो ऑनलाइन काम करना चाहते हैं ( who want to get his/her website online)और जो लोग CSC की ऑनलाइन सुविधाओं का लाभ उठाना चाहते हैं।</h5>
   
     <div class="popup-buttons">
 
-      <!-- WhatsApp Button -->
-      <a href="https://wa.me/918684899861" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i> Contact on WhatsApp
-      </a>
-       <a href="https://whatsapp.com/channel/0029Vb90Q7bBlHplJIprsV3z" target="_blank" class="whatsapp-btn">
+        <a href="https://whatsapp.com/channel/0029Vb90Q7bBlHplJIprsV3z" target="_blank" class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i> Join WhatsApp Channel
       </a>
                 <a href="https://drive.google.com/file/d/18qi1xV3f6QZZILzoCyVjW_aWsz0CNuiJ/view?usp=drivesdk"><button class="btn btn-primary">Download App for easily access (from link)</button></a>
@@ -175,7 +230,11 @@
 </div>
 
 <style>
-
+.laptop9{
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 18px;
+}
 .popup-overlay{
     position:fixed;
     top:0;
@@ -1175,7 +1234,7 @@ async function checkForUpdates() {
 </style>
 <div class="card">
      <div class="card-footer">
-<h5 class="fr">last updated: <span id="lastUpdated">21:23 PM on 13 August-2026</span></h5>
+<h5 class="fr">last updated: <span id="lastUpdated">21:23 PM on 18 August-2026</span></h5>
     </div>
 </div>
           </body>
